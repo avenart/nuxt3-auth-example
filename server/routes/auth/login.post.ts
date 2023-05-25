@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   const user = await findUserByEmail(email)
   if (!user) {
     throw createError({
-      statusCode: 40,
+      statusCode: 400,
       message: 'Invalid credentials',
     })
   }
